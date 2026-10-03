@@ -26,15 +26,19 @@ const std::size_t kEntryCount = sizeof(kEntries) / sizeof(kEntries[0]);
 
 int help(int argc, char** argv) {
   std::println("Usage: 4_dispatch [COMMAND]");
+
+  // проходимся по списку всех команд
   for (std::size_t i = 0; i < kEntryCount; ++i) {
     std::println(" * {}\t - {}", kEntries[i].name, kEntries[i].description);
   }
+
   return 0;
 }
 
 int dog(int argc, char** argv) {
   bool loud = false;
 
+  // парсинг
   if (argc > 1) {
     std::println("Incorrect usage. Need `help`?");
     return -1;
