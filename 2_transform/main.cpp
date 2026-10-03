@@ -1,4 +1,6 @@
-#include <print>  // std::print(), std::println()
+#include <print>  // std::println()
+
+#include "transform.h"
 
 int square(int a) {
   std::println("square({})", a);
@@ -8,16 +10,6 @@ int square(int a) {
 int half(int a) {
   std::println("half({})", a);
   return a / 2;
-}
-
-// `begin` - указатель на начало
-// `end`   - указатель за конец
-// `map`   - callback для изменения элементов
-void transform(int* begin, int* end, int(*map)(int)) {
-  while (begin != end) {
-    *begin = map(*begin);
-    ++begin;
-  }
 }
 
 void dump(const int* begin, const int* end, const char* name) {
